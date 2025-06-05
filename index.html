@@ -24,17 +24,27 @@
     </div>
   </div>
 
-  <video id="video" src="assets/seu-video.mp4" autoplay playsinline></video>
+  <video id="video" src="assets/seu-video.mp4" autoplay></video>
 
   <script>
     function playVideo() {
       const video = document.getElementById('video');
-      document.body.requestFullscreen(); // entra em tela cheia do navegador
+      const container = document.querySelector('.container');
+      const overlay = document.querySelector('.pattern-overlay');
 
-      document.querySelector('.container').style.display = 'none';
+      container.style.display = 'none';
+      overlay.style.display = 'none';
+
       video.style.display = 'block';
       video.muted = false;
-      video.play();
+      video.setAttribute("autoplay", "true");
+      video.setAttribute("playsinline", "true");
+      video.setAttribute("controls", "false");
+
+      video.play().catch((err) => {
+        console.error("Erro ao reproduzir vídeo:", err);
+        alert("Clique necessário para iniciar o vídeo com som.");
+      });
     }
   </script>
 </body>
