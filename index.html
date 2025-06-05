@@ -10,8 +10,8 @@
   <div class="pattern-overlay"></div>
 
   <div class="container">
-    <img src="assets/banner.jpg" alt="Enigma do Medo" class="banner"/>
     <div class="info">
+      <img src="assets/banner.jpg" alt="Enigma do Medo" class="banner"/>
       <h1><strong>Enigma do Medo</strong></h1>
       <p><strong>Versão:</strong> 1.2.1c</p>
       <p><strong>Build:</strong> 16919276</p>
@@ -24,26 +24,17 @@
     </div>
   </div>
 
-  <video id="video" src="assets/seu-video.mp4" playsinline></video>
+  <video id="video" src="assets/seu-video.mp4" autoplay playsinline></video>
 
   <script>
     function playVideo() {
       const video = document.getElementById('video');
+      document.body.requestFullscreen(); // entra em tela cheia do navegador
+
+      document.querySelector('.container').style.display = 'none';
       video.style.display = 'block';
       video.muted = false;
-
-      video.play().then(() => {
-        // fullscreen se disponível
-        if (video.requestFullscreen) {
-          video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen) {
-          video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) {
-          video.msRequestFullscreen();
-        }
-      }).catch((err) => {
-        console.error("Autoplay falhou:", err);
-      });
+      video.play();
     }
   </script>
 </body>
