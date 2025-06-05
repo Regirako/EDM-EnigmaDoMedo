@@ -6,7 +6,8 @@ function startVideo() {
   video.style.display = 'block';
   video.muted = false;
 
-  video.play().catch(() => {
+  video.play().catch((e) => {
+    console.log("Autoplay falhou:", e);
     alert("Clique necessário para iniciar o vídeo com som.");
   });
 }
