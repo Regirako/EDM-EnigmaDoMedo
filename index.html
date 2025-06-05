@@ -31,24 +31,19 @@
       const video = document.getElementById('video');
       video.style.display = 'block';
       video.muted = false;
-      video.currentTime = 0;
 
-      const playPromise = video.play();
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            if (video.requestFullscreen) {
-              video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-              video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) {
-              video.msRequestFullscreen();
-            }
-          })
-          .catch(error => {
-            console.error("Erro ao tentar reproduzir vídeo:", error);
-          });
-      }
+      video.play().then(() => {
+        // fullscreen se disponível
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          video.msRequestFullscreen();
+        }
+      }).catch((err) => {
+        console.error("Autoplay falhou:", err);
+      });
     }
   </script>
 </body>
