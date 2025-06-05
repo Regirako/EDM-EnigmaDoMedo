@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #001f3f;
+  background-color: #001f3f; /* azul marinho escuro */
   height: 100vh;
   overflow: hidden;
   color: #ffffff;
@@ -18,39 +18,44 @@ html, body {
   background-image: url('assets/pattern.png');
   background-repeat: repeat;
   background-size: 300px;
-  animation: movePattern 60s linear infinite;
   opacity: 0.08;
   z-index: 0;
+  animation: scrollPattern 60s linear infinite;
 }
 
-@keyframes movePattern {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+@keyframes scrollPattern {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .container {
   z-index: 2;
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100vh;
   text-align: center;
+  padding: 20px;
 }
 
-.info {
-  background-color: #1e1e1e;
+.content-box {
+  background-color: #1e1e1e; /* cinza escuro sólido */
   padding: 30px 40px;
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.6);
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
 }
 
 .banner {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  border-radius: 12px;
   margin-bottom: 20px;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
@@ -72,7 +77,7 @@ html, body {
 
 button {
   margin-top: 20px;
-  background-color: #0073c1; /* azul marinho mais claro */
+  background-color: #0077cc; /* azul marinho mais claro */
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -85,7 +90,7 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  background-color: #0084e0;
+  background-color: #0088dd;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
@@ -99,4 +104,14 @@ video {
   object-fit: cover;
   z-index: 9999;
   pointer-events: none;
+}
+
+/* Remove qualquer interface nativa de controles */
+video::-webkit-media-controls {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
 }
