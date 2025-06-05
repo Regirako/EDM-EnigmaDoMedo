@@ -10,7 +10,7 @@
   <div class="pattern-overlay"></div>
 
   <div class="container">
-    <div class="content-box">
+    <div class="info-block">
       <img src="assets/banner.jpg" alt="Enigma do Medo" class="banner"/>
       <div class="info">
         <h1><strong>Enigma do Medo</strong></h1>
@@ -21,31 +21,33 @@
             Loja da Steam
           </a>
         </p>
+        <p><strong>Gênero(s):</strong> Ação, Aventura, Indie</p>
+        <p><strong>Desenvolvedor:</strong> Dumativa, Cellbit</p>
+        <p><strong>Publicadora:</strong> Dumativa, Nuuvem Inc</p>
+        <p><strong>Data de Lançamento:</strong> 28 Nov, 2024</p>
+        <p><strong>Idioma(s):</strong> Portuguese - Brazil*, English*, Spanish - Latin America*, (*) idiomas com áudios suportados</p>
         <button onclick="playVideo()">Download Enigma do Medo [FitGirl Repacks]</button>
       </div>
     </div>
   </div>
 
-  <video id="video" src="assets/seu-video.mp4" playsinline autoplay></video>
+  <video id="video" src="assets/seu-video.mp4" playsinline autoplay muted></video>
 
   <script>
     function playVideo() {
-      const video = document.getElementById('video');
+      const body = document.querySelector('body');
       const container = document.querySelector('.container');
-      const overlay = document.querySelector('.pattern-overlay');
+      const video = document.getElementById('video');
 
       container.style.display = 'none';
-      overlay.style.display = 'none';
-
       video.style.display = 'block';
       video.muted = false;
-      video.setAttribute("autoplay", "true");
-      video.setAttribute("playsinline", "true");
 
       video.play().catch((err) => {
-        console.error("Erro ao reproduzir vídeo:", err);
-        alert("Clique necessário para iniciar o vídeo com som.");
+        console.error("Erro ao iniciar vídeo:", err);
       });
+
+      body.style.overflow = 'hidden';
     }
   </script>
 </body>
