@@ -1,25 +1,42 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #001f3f; /* Azul marinho escuro */
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #001f3f; /* azul marinho escuro */
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+}
+
+.pattern-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('assets/pattern.png');
   background-repeat: repeat;
   background-size: 300px;
-  color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  opacity: 0.08; /* opacidade baixa pro brilho não atrapalhar */
+  z-index: 0;
 }
 
 .container {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
   text-align: center;
   background-color: #1e1e1e; /* cinza escuro sólido */
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.8);
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .banner {
@@ -27,8 +44,8 @@ html, body {
   max-width: 600px;
   height: auto;
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
   margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .info h1, .info p {
@@ -48,7 +65,7 @@ html, body {
 
 button {
   margin-top: 20px;
-  background-color: #004080; /* azul marinho levemente mais claro */
+  background-color: #005099; /* azul marinho mais claro */
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -61,17 +78,17 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  background-color: #0059b3;
+  background-color: #006dcc;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
 video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
   display: none;
   position: fixed;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
   z-index: 9999;
 }
