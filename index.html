@@ -1,30 +1,31 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <title>Enigma do Medo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EDM - Enigma do Medo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <div class="container">
-    <img src="assets/banner.jpg" alt="Banner Enigma do Medo" class="banner"/>
-
+    <img src="assets/banner.jpg" alt="Enigma do Medo" class="banner"/>
     <div class="info">
       <h1><strong>Enigma do Medo</strong></h1>
       <p><strong>Versão:</strong> 1.2.1c</p>
       <p><strong>Build:</strong> 16919276</p>
-      <p><strong>Loja da Steam:</strong> https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian</p>
-      <button onclick="startVideo()">Download Enigma do Medo [FitGirl Repacks]</button>
+      <p><a class="steam-link" href="https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian" target="_blank">Loja da Steam</a></p>
+      <button onclick="playVideo()">Download Enigma do Medo [FitGirl Repacks]</button>
     </div>
   </div>
 
-  <video id="mainVideo" playsinline>
-    <source src="video/seu-video.mp4" type="video/mp4" />
-    Seu navegador não suporta vídeo.
-  </video>
+  <video id="video" src="assets/video.mp4"></video>
 
-  <script src="script.js"></script>
+  <script>
+    function playVideo() {
+      const video = document.getElementById('video');
+      video.style.display = 'block';
+      video.play();
+    }
+  </script>
 </body>
 </html>
