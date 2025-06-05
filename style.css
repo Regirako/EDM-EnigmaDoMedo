@@ -13,33 +13,29 @@ html, body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 200%;
   height: 100%;
   background-image: url('assets/pattern.png');
   background-repeat: repeat;
   background-size: 300px;
+  animation: movePattern 60s linear infinite;
   opacity: 0.08;
   z-index: 0;
+}
+
+@keyframes movePattern {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .container {
   z-index: 2;
   position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   text-align: center;
-}
-
-.banner {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .info {
@@ -48,7 +44,16 @@ html, body {
   border-radius: 16px;
   box-shadow: 0 0 15px rgba(0,0,0,0.6);
   max-width: 600px;
-  margin-top: 20px;
+  width: 100%;
+}
+
+.banner {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .info h1, .info p {
@@ -68,7 +73,7 @@ html, body {
 
 button {
   margin-top: 20px;
-  background-color: #0063b1; /* azul marinho mais claro */
+  background-color: #0073c1; /* azul marinho mais claro */
   color: white;
   font-size: 1.1rem;
   border: none;
@@ -81,7 +86,7 @@ button {
 
 button:hover {
   transform: scale(1.05);
-  background-color: #0077cc;
+  background-color: #0084e0;
   box-shadow: 0 8px 20px rgba(0,0,0,0.6);
 }
 
@@ -94,4 +99,5 @@ video {
   height: 100vh;
   object-fit: cover;
   z-index: 9999;
+  pointer-events: none;
 }
