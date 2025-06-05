@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projeto Meme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="startOverlay">
+    <button onclick="startVideo()">Okay, me tire daqui</button>
+  </div>
+
+  <video id="mainVideo" playsinline>
+    <source src="video/seu-video.mp4" type="video/mp4" />
+    Seu navegador não suporta vídeo.
+  </video>
+
+  <div id="exitOverlay1" class="overlayBox">
+    <div>Seu texto aqui</div>
+    <button onclick="acknowledgeExit(1)">Okay, eu entendi</button>
+  </div>
+
+  <div id="exitOverlay2" class="overlayBox">
+    <div>Seu texto aqui 2</div>
+    <button onclick="acknowledgeExit(2)">Entendi</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
