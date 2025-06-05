@@ -63,7 +63,8 @@ html, body {
 }
 
 .info h1, .info p {
-  margin: 6px 0;
+  margin: 2px 0;
+  line-height: 1.2;
 }
 
 .steam-link {
