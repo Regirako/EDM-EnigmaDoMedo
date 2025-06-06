@@ -38,10 +38,13 @@ EDM-EnigmaDoMedo/
 
 ---
 
+## 🔗 Link da Site
+
+[🔗 EDM - Enigma do Medo](https://regirako.github.io/EDM-EnigmaDoMedo/)
+
 ## 🔗 Link da Steam
 
 [🔗 Loja da Steam - Enigma do Medo](https://store.steampowered.com/app/1507580/Enigma_do_Medo/?l=brazilian)
-
 ---
 
 ## 🛠️ Tecnologias Utilizadas
