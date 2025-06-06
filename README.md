@@ -34,7 +34,7 @@ EDM-EnigmaDoMedo/
 
 ## 🖼️ Preview
 
-![Preview da Página](assets/banner.jpg)
+![Preview da Página](https://i.imgur.com/hqU5JSu.png)
 
 ---
 
@@ -79,4 +79,4 @@ Este projeto é apenas para uso pessoal e não possui licença comercial.
 
 ---
 
-Criado com 🎧 por @regirako
+Criado com 🎧 por [@regirako](https://github.com/regirako)
